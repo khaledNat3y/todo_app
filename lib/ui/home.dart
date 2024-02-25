@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/ui/screens/bottom_sheet/add_bottom_sheet/add_bottom_sheet.dart';
 import 'package:todo_app/ui/screens/home/tabs/list_tab/list_tab.dart';
 import 'package:todo_app/ui/screens/home/tabs/settings_tab/settings_tab.dart';
 import 'package:todo_app/ui/screens/splash_screen/splash_screen.dart';
@@ -37,6 +38,7 @@ class _HomeState extends State<Home> {
   }
 
   Widget buildBottomNavigationBar() => BottomAppBar(
+
     shape: const CircularNotchedRectangle(),
     notchMargin: 12,
     elevation: 0,
@@ -56,7 +58,17 @@ class _HomeState extends State<Home> {
   );
 
   buildFab() => FloatingActionButton(
-    onPressed: (){},
+    onPressed: (){
+      showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          builder: (context) {
+            return Padding(
+              padding: MediaQuery.of(context).viewInsets,
+                child: AddBottomSheet());
+          }
+      );
+    },
     child: Icon(Icons.add,color: AppColors.white,),
   shape: StadiumBorder(side: BorderSide(color: AppColors.white ,width: 4)),);
 }

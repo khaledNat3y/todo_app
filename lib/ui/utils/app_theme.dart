@@ -19,7 +19,7 @@ abstract class AppTheme {
   static const TextStyle bottomTitleTextStyle = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w400,
-    color: AppColors.lightBlack,
+    color: AppColors.black,
   );
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: AppColors.accent,
